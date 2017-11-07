@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, except: %i(index new create)
+  before_action :load_user, only: :show
 
   def index
     @users = User.all
   end
 
-
-  def show; end
 
   def new
     @user = User.new
@@ -17,13 +16,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
 
-    respond_to do |format|
-      if @user.save
-        format.html {redirect_to @user,
-          notice: t(".User was successfully created")}
-      else
-        format.html {render :new}
-      end
+    if @user.save
+      log_in @user
+      flash[:success] = t ".User was successfully created"
+      redirect_to @user
+    else
+      render :new
     end
   end
 
@@ -48,6 +46,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def load_user
+    @user = User.find_by id: params[:id]
+  end
 
   def set_user
     @user = User.find params[:id]

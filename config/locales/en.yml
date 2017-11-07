@@ -1,6 +1,13 @@
 en:
   hello: "Hello world"
   Confirmation: "Confirmation"
+  Home: "Home"
+  Help: "Help"
+  Users: "Users"
+  Profile: "Profile"
+  Settings: "Settings"
+  Log out: "Log out"
+  Log in: "Log in"
 
   users:
     new:
@@ -12,3 +19,11 @@ en:
       User was successfully updated: "User was successfully updated."
     destroy:
       User was successfully destroyed: "User was successfully destroyed."
+
+  sessions:
+    new:
+      Log in: "Log in"
+      Sign up now: "Sign up now!"
+      New user?: "New user?"
+    create:
+      Invalid email/password combination: "Invalid email/password combination"
