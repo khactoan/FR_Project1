@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, except: %i(index new create)
   before_action :load_user, only: :show
+  attr_accessor :remember_token
 
   def index
     @users = User.all

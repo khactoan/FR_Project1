@@ -6,7 +6,7 @@
         <li><%= link_to t("Home"), "#" %></li>
         <li><%= link_to t("Help"), "#" %></li>
         <% if logged_in? %>
-          <li><%= link_to t("Users"), "#" %></li>
+          <li><%= link_to t("Users"), current_user %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
