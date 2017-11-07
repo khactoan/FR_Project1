@@ -1,6 +1,9 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+$gray: #777;
+$gray-light: #bbb;
+
 /* universal */
 body {
   padding-top: 60px;
@@ -40,7 +43,7 @@ h1 {
 }
 
 h2 {
-  color: #777;
+  color: $gray;
   font-size: 1.2em;
   font-weight: normal;
   letter-spacing: -1px;
@@ -54,15 +57,15 @@ p {
 }
 
 @mixin box_sizing {
-  -moz-box-sizing:    border-box;
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 /* forms */
 input, textarea, select, .uneditable-input {
   @include box_sizing;
-  border: 1px solid #bbb;
+  border: 1px solid $gray-light;
   margin-bottom: 15px;
   width: 100%;
 }
@@ -98,4 +101,51 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.stats {
+  a {
+    border-left: 1px solid $gray-light;
+    color: gray;
+    float: left;
+    padding: 0 10px;
+    &:first-child {
+      border: 0;
+      padding-left: 0;
+    }
+    &:hover {
+      color: blue;
+      text-decoration: none;
+    }
+  }
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  a {
+    padding: 0;
+  }
+  margin-top: 10px;
+  overflow: auto;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }
