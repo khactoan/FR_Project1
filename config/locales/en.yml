@@ -1,6 +1,13 @@
 en:
   hello: "Hello world"
   Confirmation: "Confirmation"
+  Home: "Home"
+  Help: "Help"
+  Users: "Users"
+  Profile: "Profile"
+  Settings: "Settings"
+  Log out: "Log out"
+  Log in: "Log in"
 
   users:
     new:
