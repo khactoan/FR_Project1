@@ -28,3 +28,8 @@ en:
       Remember me on this computer: "Remember me on this computer"
     create:
       Invalid email/password combination: "Invalid email/password combination"
+
+  shared:
+    stats:
+      following: "following"
+      followers: "followers"
