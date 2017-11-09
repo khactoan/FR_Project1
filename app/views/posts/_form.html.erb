@@ -11,19 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :post_title %>
+    <input type="text" class="form-control" name="post[title]" placeholder="">
   </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_field :content, id: :post_content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id, id: :post_user_id %>
+  <div class="form-group">
+      <%= form.label :content %>
+      <textarea class="form-control" rows="15" name="post[content]"></textarea>
   </div>
 
   <div class="actions">
