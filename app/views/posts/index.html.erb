@@ -20,10 +20,12 @@
 <div class="portlet box green">
   <div class="portlet-title">
       <div class="caption">
-        <%= link_to new_post_path do %>
-          <button type="button" class="btn default">
-            <%= t ".New post" %>
-          </button>
+        <% if logged_in? %>
+          <%= link_to new_post_path do %>
+            <button type="button" class="btn default">
+              <%= t ".New post" %>
+            </button>
+          <% end %>
         <% end %>
         <form action = "posts" method="get">
           <input type="hidden" name="sort" value="desc">
