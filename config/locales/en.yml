@@ -8,6 +8,10 @@ en:
   Settings: "Settings"
   Log out: "Log out"
   Log in: "Log in"
+  Show: "Show"
+  Edit: "Edit"
+  Destroy: "Destroy"
+  Are you sure?: "Are you sure?"
 
   users:
     new:
@@ -41,4 +45,10 @@ en:
 
   posts:
     index:
+      Created_at: "Created_at"
+      Enter title to search: "Enter title to search"
       New post: "New post"
+      Search: "Search"
+      Title: "Title"
+      User: "User"
+      View latest post: "View latest post"

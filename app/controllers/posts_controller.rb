@@ -8,6 +8,7 @@ class PostsController < ApplicationController
       @posts = Post.where "title like ?", "%" + params[:search] + "%"
     end
 
+    @posts = @posts.order created_at: params[:sort] if params[:sort] != nil
     @posts = @posts.paginate :page => params[:page],
       :per_page => Settings.perpage
   end
