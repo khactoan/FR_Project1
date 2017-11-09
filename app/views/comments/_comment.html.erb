@@ -1,0 +1,33 @@
+<div class="blog-comments">
+    <h3 class="sbold blog-comments-title">Comments(30)</h3>
+    <div class="c-comment-list">
+        <% @comments.each do |comment| %>
+            <div class="media">
+            <div class="media-left">
+                <%= gravatar_for comment.user %>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    <a href="#"><%= comment.user.name %></a> on
+                    <span class="c-date">
+                        <%= comment.created_at %>
+                    </span>
+                </h4> <%= comment.content %> </div>
+            </div>
+        <% end %>
+
+        <%= will_paginate @comments %>
+    </div>
+    <% if can_comment? @post %>
+        <h3 class="sbold blog-comments-title">Leave A Comment</h3>
+        <form action="/comments" method="post">
+            <div class="form-group">
+                <input type="hidden" name="comment[post_id]" value="<%= @post.id %>">
+                <textarea rows="8" name="comment[content]" placeholder="Write comment here ..." class="form-control c-square"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn blue uppercase btn-md sbold btn-block">Submit</button>
+            </div>
+        </form>
+    <% end %>
+</div>

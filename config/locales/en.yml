@@ -33,3 +33,12 @@ en:
     stats:
       following: "following"
       followers: "followers"
+
+  comments:
+    create:
+      You do not have permission to comment on this post:
+        "You do not have permission to comment on this post"
+
+  posts:
+    index:
+      New post: "New post"
