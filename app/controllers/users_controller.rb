@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
   before_action :set_user, except: %i(index new create)
-  before_action :load_user, only: :show
+  before_action :load_user, only: %i(show following)
   attr_accessor :remember_token
 
   def index
     @users = User.all
   end
 
-
   def new
     @user = User.new
   end
-
-  def edit; end
 
   def create
     @user = User.new user_params
@@ -25,6 +22,8 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
+  def edit; end
 
   def update
     respond_to do |format|
@@ -44,6 +43,14 @@ class UsersController < ApplicationController
       format.html {redirect_to users_url,
         notice: t(".User was successfully destroyed")}
     end
+  end
+
+  def following
+    @users = @user.following
+  end
+
+  def followers
+    @users = @user.followers
   end
 
   private

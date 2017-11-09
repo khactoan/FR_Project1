@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comments = Comment.where(post_id: @post.id)
+    @comments = Comment.where(post_id: @post.id).order_by_created_at_desc
       .paginate :page => params[:page], :per_page => Settings.perpage
   end
 
