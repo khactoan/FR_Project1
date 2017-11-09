@@ -36,4 +36,17 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  def can_comment? post
+    if logged_in?
+      if current_user.following?(post.user) ||
+        post.user.current_user?(current_user)
+        return true
+      else
+        return false
+      end
+    else
+      return false
+    end
+  end
 end
