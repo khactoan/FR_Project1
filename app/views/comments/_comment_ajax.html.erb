@@ -1,16 +1,16 @@
 <% comments.each do |comment| %>
-    <div class="media">
-    <div class="media-left">
-        <%= gravatar_for comment.user %>
-    </div>
-    <div class="media-body">
-        <h4 class="media-heading">
-            <a href="#"><%= comment.user.name %></a> on
-            <span class="c-date">
-                <%= comment.created_at %>
-            </span>
-        </h4> <%= comment.content %> </div>
-    </div>
+  <div class="media">
+  <div class="media-left">
+      <%= gravatar_for comment.user %>
+  </div>
+  <div class="media-body">
+      <h4 class="media-heading">
+          <a href="#"><%= comment.user.name %></a> on
+          <span class="c-date">
+              <%= comment.created_at %>
+          </span>
+      </h4> <%= comment.content %> </div>
+  </div>
 <% end %>
 
 <%= will_paginate comments %>

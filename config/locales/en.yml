@@ -42,6 +42,8 @@ en:
     create:
       You do not have permission to comment on this post:
         "You do not have permission to comment on this post"
+    comment:
+      Create comment: "Create comment"
 
   posts:
     index:
