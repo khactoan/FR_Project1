@@ -1,20 +1,21 @@
 <div class="blog-comments">
-    <h3 class="sbold blog-comments-title">
-        <%= t ".Comments" %>
-    </h3>
-    <div class="c-comment-list">
-        <div id="comment-list">
-            <%= render partial: '/comments/comment_ajax', locals: {comments: @comments} %>
-        </div>
-    </div>
+  <h3 class="sbold blog-comments-title">
+      <%= t ".Comments" %>
+  </h3>
+  <div class="c-comment-list">
+      <div id="comment-list">
+          <%= render partial: "/comments/comment_ajax",
+            locals: {comments: @comments} %>
+      </div>
+  </div>
 
-    <% if can_comment? @post %>
-        <h3 class="sbold blog-comments-title">Leave A Comment</h3>
-        <%= form_for [@comment, Comment.new], :remote => true do |f| %>
-            <%= f.text_area :content, placeholder: "Nhập Nội Dung Cho Comment." %>
-            <%= f.hidden_field :post_id, :value => @post.id %>
-            <%= f.hidden_field :user_id, :value => current_user.id %>
-            <%= f.submit "Tạo Comment", class: "btn blue uppercase btn-md sbold btn-block" %>
-        <% end %>
-    <% end %>
+  <% if can_comment? @post %>
+      <h3 class="sbold blog-comments-title">Leave A Comment</h3>
+      <%= form_for [@comment, Comment.new], :remote => true do |f| %>
+          <%= f.text_area :content %>
+          <%= f.hidden_field :post_id, :value => @post.id %>
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+          <%= f.submit t("Create comment"), class: "btn blue uppercase btn-md sbold btn-block" %>
+      <% end %>
+  <% end %>
 </div>
