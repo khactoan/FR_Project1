@@ -22,9 +22,6 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
-  def edit
-  end
-
   def create
     if logged_in?
       @post = Post.new(post_params)

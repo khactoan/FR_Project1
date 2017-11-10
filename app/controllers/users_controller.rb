@@ -9,6 +9,9 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    respond_to do |format|
+      format.js
+    end
   end
 
   def create
@@ -19,7 +22,8 @@ class UsersController < ApplicationController
       flash[:success] = t ".User was successfully created"
       redirect_to @user
     else
-      render :new
+      flash[:danger] = t ".Sign up error"
+      redirect_to root_path
     end
   end
 
