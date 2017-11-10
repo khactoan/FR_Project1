@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   attr_accessor :remember_token
 
   def index
-    @users = User.all
+    @users = User.all.paginate :page => params[:page],
+      :per_page => Settings.perpage
   end
 
   def new

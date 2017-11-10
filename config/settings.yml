@@ -7,4 +7,4 @@ user:
     minlength: 6
 
 maxlength: 50
-perpage: 2
+perpage: 10
