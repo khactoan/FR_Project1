@@ -18,10 +18,15 @@
 
   <div class="form-group">
       <%= form.label :content %>
-      <%= form.text_area :content, rows: 15 %>
+      <%= form.text_area :content, rows: 15, class: "ckeditor form-control",
+        id:"element_id" %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+<script type="text/javascript">
+        CKEDITOR.replace('element_id')
+</script>
+
