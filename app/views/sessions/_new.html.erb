@@ -1,0 +1,26 @@
+<div class="modal-dialog modal-sm" style="background-color: white; width: 60%">
+  <% provide :title, t(".Log in") %>
+  <h1><%= t ".Log in" %></h1>
+
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <%= form_for :session, url: login_path do |f| %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control" %>
+
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t "Remember me on this computer" %></span>
+        <% end %>
+
+        <%= f.submit t(".Log in"), class: "btn btn-primary" %>
+      <% end %>
+
+      <p><%= t ".New user?" %> <%= link_to t(".Sign up now"), signup_path %></p>
+    </div>
+  </div>
+</div>

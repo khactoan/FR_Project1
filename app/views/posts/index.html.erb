@@ -53,9 +53,14 @@
                   <td><%= post.created_at %></td>
                   <td><%= link_to post.user.name, post.user %></td>
                   <td><%= link_to t("Show"), post %></td>
-                  <td><%= link_to t("Edit"), edit_post_path(post) %></td>
-                  <td><%= link_to t("Destroy"), post, method: :delete,
-                    data: {confirm: t("Are you sure?")} %></td>
+                  <% if can_edit_destroy? post %>
+                    <td><%= link_to t("Edit"), edit_post_path(post) %></td>
+                    <td><%= link_to t("Destroy"), post, method: :delete,
+                      data: {confirm: t("Are you sure?")} %></td>
+                  <% else %>
+                    <td></td>
+                    <td></td>
+                  <% end %>
                 </tr>
               <% end %>
           </tbody>

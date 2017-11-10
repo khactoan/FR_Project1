@@ -49,4 +49,8 @@ module SessionsHelper
       return false
     end
   end
+
+  def can_edit_destroy? post
+    return post.user.current_user?(current_user)
+  end
 end
