@@ -11,7 +11,7 @@
                         <a href="javascript:;"><%= @post.created_at %></a>
                     </div>
                 </div>
-                    <%= @post.content %>
+                    <%= raw @post.content %>
                 </div>
                 <%= render "comments/comment" %>
             </div>
